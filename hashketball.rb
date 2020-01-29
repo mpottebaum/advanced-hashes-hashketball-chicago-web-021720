@@ -236,7 +236,7 @@ def big_shoe_rebounds
   biggest_shoes_array[biggest_shoe_index][:rebounds]
 end
 
-def most_points
+def most_points_scored
   game = game_hash
   most_points_array = array_of_biggest_keys(game, :points)
   most_points_index = search_for_biggest(most_points_array, :points)
