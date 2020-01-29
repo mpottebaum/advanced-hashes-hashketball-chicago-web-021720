@@ -244,5 +244,7 @@ def most_points_scored
 end
 
 def total_points(array_of_players)
-  
+  array_of_players.map do |player_hash|
+    
+  end
 end
