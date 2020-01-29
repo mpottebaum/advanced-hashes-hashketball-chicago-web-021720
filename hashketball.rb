@@ -219,6 +219,8 @@ def search_for_biggest(hash_array, high_key)
 end
 
 def array_of_biggest_keys(game_set, high_key)
+  #returns array with two player hashes
+  #each player has the largest value of the designated key for his respective team
   biggest_array = []
   game_set.each_pair do |team, team_hash|
     index = search_for_biggest(team_hash[:players], high_key)
@@ -235,5 +237,8 @@ def big_shoe_rebounds
 end
 
 def most_points
-
+  game = game_hash
+  most_points_array = array_of_biggest_keys(game, :points)
+  most_points_index = search_for_biggest(most_points_array, :points)
+  most_points_array[most_points_index][:player_name]
 end
