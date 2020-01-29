@@ -221,7 +221,7 @@ end
 def array_of_biggest_keys(game_set, high_key)
   biggest_array = []
   game_set.each_pair do |team, team_hash|
-    index = search_for_biggest(team_hash[:players]), high_key)
+    index = search_for_biggest(team_hash[:players], high_key)
     biggest_array << team_hash[:players][index]
   end
   biggest_array
