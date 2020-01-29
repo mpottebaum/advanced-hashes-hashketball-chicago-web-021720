@@ -288,3 +288,19 @@ def player_with_longest_name
   longest_name_index = search_for_longest_name(long_name_array)
   long_name_array[longest_name_index][:player_name]
 end
+
+def long_name_steals_a_ton?
+  #find player with longest name
+  longest_name = player_with_longest_name
+  
+  #find player with most steals
+  most_steals_array = array_of_biggest_keys(game, :steals)
+  most_steals_index = search_for_biggest(most_steals_array, :steals)
+  
+  #compare these and return true if the names match
+  if longest_name == most_steals_array[most_steals_index][:player_name]
+    return true
+  else
+    return false
+  end
+end
