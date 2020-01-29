@@ -243,3 +243,6 @@ def most_points_scored
   most_points_array[most_points_index][:player_name]
 end
 
+def total_points(array_of_players)
+  
+end
