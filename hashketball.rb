@@ -209,10 +209,10 @@ def player_stats(name)
 end
 
 def search_for_biggest_shoe(hash_array)
-  #searches players array of hashes for player name
+  #searches players array of hashes for largest shoe size
   #returns player index
-  index = hash_array.find_index do |player_hash|
-    player_hash[:player_name] == name
+  index = hash_array.max do |hash_a, hash_b|
+    hash_a[:shoe] <=> hash_b[:shoe]
   end
   if index == nil
     return false
