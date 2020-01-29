@@ -290,6 +290,7 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
+  game = game_hash
   #find player with longest name
   longest_name = player_with_longest_name
   
