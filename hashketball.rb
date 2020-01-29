@@ -242,3 +242,4 @@ def most_points_scored
   most_points_index = search_for_biggest(most_points_array, :points)
   most_points_array[most_points_index][:player_name]
 end
+
