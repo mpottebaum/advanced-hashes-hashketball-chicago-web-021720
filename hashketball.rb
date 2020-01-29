@@ -214,6 +214,9 @@ def search_for_biggest_shoe(hash_array)
   player_hash  = hash_array.max do |hash_a, hash_b|
     hash_a[:shoe] <=> hash_b[:shoe]
   end
-  player_hash[:rebounds]
+  player_hash
 end
 
+def big_shoe_rebounds
+  game = game_hash
+  
