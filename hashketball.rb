@@ -260,3 +260,9 @@ def winning_team
     return game[:away][:team_name]
   end
 end
+
+def player_with_longest_name
+  game = game_hash
+  long_name_array = array_of_biggest_keys(game, :player_name)
+  
+end
