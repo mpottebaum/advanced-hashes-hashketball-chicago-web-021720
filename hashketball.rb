@@ -208,11 +208,11 @@ def player_stats(name)
   end
 end
 
-def search_for_biggest_shoe(hash_array)
-  #searches players array of hashes for largest shoe size
+def search_for_biggest(hash_array, high_key)
+  #searches players array of hashes for largest key value
   #returns player index
   player_hash  = hash_array.max do |hash_a, hash_b|
-    hash_a[:shoe] <=> hash_b[:shoe]
+    hash_a[high_key] <=> hash_b[high_key]
   end
   index = hash_array.index(player_hash)
   index
@@ -222,9 +222,13 @@ def big_shoe_rebounds
   game = game_hash
   biggest_shoes_array = []
   game.each_pair do |team, team_hash|
-    big_shoe_index = search_for_biggest_shoe(team_hash[:players])
+    big_shoe_index = search_for_biggest(team_hash[:players]), :shoe)
     biggest_shoes_array << team_hash[:players][big_shoe_index]
   end
-  biggest_shoe_index = search_for_biggest_shoe(biggest_shoes_array)
+  biggest_shoe_index = search_for_biggest(biggest_shoes_array, :shoe)
   biggest_shoes_array[biggest_shoe_index][:rebounds]
+end
+
+def most_points
+  
 end
