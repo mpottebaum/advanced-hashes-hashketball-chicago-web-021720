@@ -218,6 +218,10 @@ def search_for_biggest(hash_array, high_key)
   index
 end
 
+def array_of_biggest_keys(game_set, high_key)
+  game_set
+end
+
 def big_shoe_rebounds
   game = game_hash
   biggest_shoes_array = []
