@@ -207,3 +207,15 @@ def player_stats(name)
     end
   end
 end
+
+def search_for_biggest_shoe(name, hash_array)
+  #searches players array of hashes for player name
+  #returns player index
+  index = hash_array.find_index do |player_hash|
+    player_hash[:player_name] == name
+  end
+  if index == nil
+    return false
+  end
+  index
+end
