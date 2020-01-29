@@ -244,7 +244,19 @@ def most_points_scored
 end
 
 def total_points(array_of_players)
-  array_of_players.map do |player_hash|
-    
+  points_array = array_of_players.map do |player_hash|
+    player_hash[:points]
+  end
+  points_array.sum
+end
+
+def winning_team
+  game = game_hash
+  away_points = total_points(game[:away][:players])
+  home_points = total_points(game[:home][:players])
+  if home_points > away_points
+    return game[:home][:team_name]
+  else
+    return game[:away][:team_name]
   end
 end
