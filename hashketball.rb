@@ -261,9 +261,30 @@ def winning_team
   end
 end
 
+def search_for_longest_name(hash_array)
+  #searches players array of hashes for longest name
+  #returns player with longest name's index
+  player_hash  = hash_array.max do |hash_a, hash_b|
+    hash_a[:player_name].length <=> hash_b[:player_name].length
+  end
+  index = hash_array.index(player_hash)
+  index
+end
+
+def array_of_longest_names(game_set)
+  #returns array with two player hashes
+  #each player has the longest name for his respective team
+  biggest_array = []
+  game_set.each_pair do |team, team_hash|
+    index = search_for_longest_name(team_hash[:players])
+    biggest_array << team_hash[:players][index]
+  end
+  biggest_array
+end
+
 def player_with_longest_name
   game = game_hash
-  long_name_array = array_of_biggest_keys(game, :player_name)
-  longest_name_index = search_for_biggest(long_name_array, :player_name)
+  long_name_array = array_of_longest_names(game)
+  longest_name_index = search_for_longest_name(long_name_array)
   long_name_array[longest_name_index][:player_name]
 end
