@@ -291,10 +291,11 @@ end
 
 def long_name_steals_a_ton?
   game = game_hash
+  
   #find player with longest name
   longest_name = player_with_longest_name
   
-  #find player with most steals
+  #find index of player with most steals
   most_steals_array = array_of_biggest_keys(game, :steals)
   most_steals_index = search_for_biggest(most_steals_array, :steals)
   
