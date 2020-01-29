@@ -264,5 +264,6 @@ end
 def player_with_longest_name
   game = game_hash
   long_name_array = array_of_biggest_keys(game, :player_name)
-  
+  longest_name_index = search_for_biggest(long_name_array, :player_name)
+  long_name_array[longest_name_index][:player_name]
 end
